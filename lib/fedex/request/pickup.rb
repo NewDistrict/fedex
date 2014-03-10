@@ -14,6 +14,7 @@ module Fedex
         @carrier_code = options[:carrier_code]
 
         @pickup_location = options[:pickup_location]
+        @remarks = options[:remarks]
       end
 
       # Sends post request to Fedex web service and parse the response, a Pickup object is created if the response is successful
@@ -46,6 +47,7 @@ module Fedex
             add_origin_detail(xml)
             add_package_details(xml)
             xml.CarrierCode @carrier_code
+            xml.Remarks @remarks if @remarks
           }
         end
         builder.doc.root.to_xml
