@@ -54,7 +54,7 @@ module Fedex
       end
 
       def service
-        { :id => 'disp', :version => 5 }
+        { :id => 'disp', :version => 6 }
       end
 
       # Add shipper to xml request
